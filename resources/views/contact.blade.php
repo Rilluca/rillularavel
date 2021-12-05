@@ -9,4 +9,4 @@
 </div>
 </body>
 </html>
-@endsection('content')
+@endsection

@@ -17,9 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::get('/addCategory', function () {
+    return view('addCategory');
+});
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/addCategory/store',[App\Http\Controllers\CategoryController::class, 'add'])->name('addCategory');
+
+Route::get('/addProduct', function () {
+    return view('addProduct');
+});
 
 Auth::routes();
 
