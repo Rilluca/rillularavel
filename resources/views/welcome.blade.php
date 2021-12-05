@@ -1,3 +1,8 @@
+@extends('layout')
+@section('leftmenu')
+<div><p>this is left menu.</p></div>
+@endsection('leftmenu')
+@section('content')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -98,3 +103,4 @@
         </div>
     </body>
 </html>
+@endsection('content')
