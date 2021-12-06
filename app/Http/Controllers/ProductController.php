@@ -22,6 +22,7 @@ class ProductController extends Controller
             'image'=>$imageName,
             'quantity'=>$r->productQuantity,
             'categoryID'=>$r->categoryID,
+            'id'=>$r->id,
         ]);
         Session::flash('success',"Product create successful!");
         return redirect()->route('showProduct');
@@ -36,5 +37,12 @@ class ProductController extends Controller
         ->get();
 
         return view('showProduct')->with('products',$viewProduct);
+    }
+
+    public function delete($id){
+        $deleteProduct=Product::find($id);
+        $deleteProduct->delete();
+        Session::flash('success',"Product deleted successfully!");
+        Return redirect()->route('showProduct');
     }
 }
