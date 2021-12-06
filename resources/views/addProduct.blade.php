@@ -5,7 +5,8 @@
     <div class="col-sm-6">
         <br><br>
         <h3>Create New Product</h3>
-        <form action="">
+        <form action="{{route('addProduct')}}" method="POST" enctype="multipart/form-data">
+            @csrf
             <div class="form-group">
                 <label for="productName">Product Name</label>
                 <input type="text" class="form-control" id="productName" name="productName">
@@ -18,7 +19,7 @@
 
             <div class="form-group">
                 <label for="productPrice">Product Price</label>
-                <input type="number" class="form-control" id="productPrice" name="productPrice" min="0">
+                <input type="number" class="form-control" id="productPrice" name="productPrice">
             </div>
 
             <div class="form-group">
@@ -33,7 +34,11 @@
 
             <div class="form-group">
                 <label for="categoryID">Category</label>
-                <input type="text" class="form-control" id="categoryID" name="categoryID" min="0">
+                <select name="categoryID" id="categoryID" class="form-control">
+                    @foreach($categoryID as $category)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                    @endforeach
+                </select>
             </div>
 
             <button type="submit" class="btn btn-primary">Add New</button>
