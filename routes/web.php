@@ -35,6 +35,10 @@ Route::get('/showProduct',[App\Http\Controllers\ProductController::class, 'view'
 
 Route::get('/deleteProduct/{id}',[App\Http\Controllers\ProductController::class,'delete'])->name('deleteProduct');
 
+Route::get('/editProduct/{id}',[App\Http\Controllers\ProductController::class,'edit'])->name('editProduct');
+
+Route::post('/updateProduct',[App\Http\Controllers\ProductController::class,'update'])->name('updateProduct');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
