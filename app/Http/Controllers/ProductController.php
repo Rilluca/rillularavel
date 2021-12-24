@@ -73,4 +73,10 @@ class ProductController extends Controller
 
         return redirect()->route('showProduct');
     }
+
+    public function productDetail($id){
+        $products=Product::all()->where('id',$id);
+
+        return view('productDetail')->with('products',$products);
+    }
 }
