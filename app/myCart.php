@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class myCart extends Model
 {
-    use HasFactory;
     protected $fillable=['productID','quantity','userID','orderID'];
 
     public function product(){
