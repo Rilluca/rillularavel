@@ -51,6 +51,10 @@ Route::post('/checkout', [App\Http\Controllers\PaymentController::class, 'paymen
 
 Route::get('/myOrder', [App\Http\Controllers\PaymentController::class, 'view'])->name('myOrder');
 
+Route::post('/viewProduct', [App\Http\Controllers\ProductController::class, 'view'])->name('viewProduct');
+
+Route::post('/viewProduct', [App\Http\Controllers\ProductController::class, 'searchProduct'])->name('search.product');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
